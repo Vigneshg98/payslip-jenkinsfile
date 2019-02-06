@@ -1,23 +1,22 @@
 pipeline {
     agent any 
     tools {
-        maven 'localMaven' 
+        maven 'LocalMaven' 
     }
     stages {
         stage('BUILD') {
             steps {
-                build 'payslip-source'
+                build 'payslip2.0-build'
             }
         }
         stage('TEST'){
             steps{
-                build 'payslip-test'
+                build 'payslip2.0-test'
             }
         }
         stage('DEPLOY'){
             steps{
-                build 'payslip-build'
-                build 'payslip-deploy'
+                build 'payslip2.0-deploy'
             }
         }
     }
